@@ -16,8 +16,11 @@
     "url": "https://github.com/a17private/amsq/issues"
   },
   "homepage": "https://github.com/a17private/amsq#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@parcel/core": "^2.0.0"
+  },
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
     "parcel-bundler": "^1.12.5"
   }
 }
