@@ -456,31 +456,101 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"Ag9pj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _pixi = require("./pixi");
+var _pixiJs = require("./pixi.js");
 var _tJpg = require("./t.jpg");
 var _tJpgDefault = parcelHelpers.interopDefault(_tJpg);
-const app = new _pixi.Application({
+const app = new _pixiJs.Application({
     backgroundColor: 1087931
 });
 document.body.appendChild(app.view);
-const container = new _pixi.Container();
+const container = new _pixiJs.Container();
 app.stage.addChild(container);
-const texture = _pixi.Texture.from('t');
+const texture = _pixiJs.Texture.from('t');
 for(let i = 0; i < 25; i++){
-    const bunny = new _pixi.Sprite(texture);
+    const bunny = new _pixiJs.Sprite(texture);
     bunny.x = i % 5 * 30;
     bunny.y = Math.floor(i / 5) * 30;
     bunny.rotation = Math.random() * (Math.PI * 2);
     container.addChild(bunny);
 }
-const brt = new _pixi.BaseRenderTexture(300, 300, _pixi.SCALE_MODES.LINEAR, 1);
-const rt = new _pixi.RenderTexture(brt);
+const brt = new _pixiJs.BaseRenderTexture(300, 300, _pixiJs.SCALE_MODES.LINEAR, 1);
+const rt = new _pixiJs.RenderTexture(brt);
 container.y = 60;
 app.ticker.add(()=>{
     app.renderer.render(container, rt);
 });
 
-},{"./pixi":"5Y89Q","./t.jpg":"5P4ky","@parcel/transformer-js/src/esmodule-helpers.js":"3Hply"}],"5Y89Q":[function(require,module,exports) {
+},{"./t.jpg":"5P4ky","@parcel/transformer-js/src/esmodule-helpers.js":"3Hply","./pixi.js":"5Y89Q"}],"5P4ky":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('apxzp') + "t.7ad1c3b6.jpg";
+
+},{"./helpers/bundle-url":"32MD8"}],"32MD8":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"3Hply":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule') return;
+        // Skip duplicate re-exports when they have the same value.
+        if (key in dest && dest[key] === source[key]) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"5Y89Q":[function(require,module,exports) {
 var global = arguments[3];
 /*!
  * pixi.js - v6.1.3
@@ -39135,76 +39205,6 @@ var global = arguments[3];
     return exports;
 }({
 }); //# sourceMappingURL=pixi.js.map
-
-},{}],"5P4ky":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('apxzp') + "t.7ad1c3b6.jpg";
-
-},{"./helpers/bundle-url":"32MD8"}],"32MD8":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"3Hply":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule') return;
-        // Skip duplicate re-exports when they have the same value.
-        if (key in dest && dest[key] === source[key]) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
 
 },{}]},["83pZH","Ag9pj"], "Ag9pj", "parcelRequire7b22")
 

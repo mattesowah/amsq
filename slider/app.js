@@ -1,6 +1,6 @@
-import * as PIXI from './pixi'
+import * as PIXI from 'pixi.js'
 
-import t from './t.jpg'
+import t from './t.jpg';
 
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
