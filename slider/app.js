@@ -1,6 +1,6 @@
-import * as PIXI from 'pixi.js'
+import * as PIXI from './pixi'
 
-
+import t from './t.jpg'
 
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
@@ -8,7 +8,7 @@ document.body.appendChild(app.view);
 const container = new PIXI.Container();
 app.stage.addChild(container);
 
-const texture = PIXI.Texture.from('examples/assets/bunny.png');
+const texture = PIXI.Texture.from('t');
 
 for (let i = 0; i < 25; i++) {
     const bunny = new PIXI.Sprite(texture);
