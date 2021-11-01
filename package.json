@@ -16,5 +16,8 @@
     "url": "https://github.com/a17private/amsq/issues"
   },
   "homepage": "https://github.com/a17private/amsq#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
 }
