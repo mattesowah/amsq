@@ -457,17 +457,19 @@ function hmrAcceptRun(bundle, id) {
 },{}],"Ag9pj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _pixiJs = require("pixi.js");
-var _tJpg = require("./t.jpg");
-var _tJpgDefault = parcelHelpers.interopDefault(_tJpg);
+var _1Jpg = require("./1.jpg");
+var _1JpgDefault = parcelHelpers.interopDefault(_1Jpg);
 const app = new _pixiJs.Application({
     backgroundColor: 1087931
 });
 document.body.appendChild(app.view);
 const container = new _pixiJs.Container();
 app.stage.addChild(container);
-const texture = _pixiJs.Texture.from('t');
+const texture = _pixiJs.Texture.from(_1JpgDefault.default);
 for(let i = 0; i < 25; i++){
     const bunny = new _pixiJs.Sprite(texture);
+    bunny.width = 30;
+    bunny.height = 30;
     bunny.x = i % 5 * 30;
     bunny.y = Math.floor(i / 5) * 30;
     bunny.rotation = Math.random() * (Math.PI * 2);
@@ -480,45 +482,7 @@ app.ticker.add(()=>{
     app.renderer.render(container, rt);
 });
 
-},{"./t.jpg":"5P4ky","@parcel/transformer-js/src/esmodule-helpers.js":"3Hply","pixi.js":"3ZUrV"}],"5P4ky":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('apxzp') + "t.7ad1c3b6.jpg";
-
-},{"./helpers/bundle-url":"32MD8"}],"32MD8":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"3Hply":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"3Hply","pixi.js":"3ZUrV","./1.jpg":"1kFnN"}],"3Hply":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -39892,6 +39856,44 @@ function __extends(d, b) {
     return AnimatedSprite2;
 }(_sprite.Sprite);
 
-},{"@pixi/core":"d0INm","@pixi/sprite":"aeiZG","@pixi/ticker":"5j6Uq","@parcel/transformer-js/src/esmodule-helpers.js":"3Hply"}]},["83pZH","Ag9pj"], "Ag9pj", "parcelRequire7b22")
+},{"@pixi/core":"d0INm","@pixi/sprite":"aeiZG","@pixi/ticker":"5j6Uq","@parcel/transformer-js/src/esmodule-helpers.js":"3Hply"}],"1kFnN":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('apxzp') + "1.b8a0dc83.jpg";
+
+},{"./helpers/bundle-url":"32MD8"}],"32MD8":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}]},["83pZH","Ag9pj"], "Ag9pj", "parcelRequire7b22")
 
 //# sourceMappingURL=index.d2682c49.js.map
